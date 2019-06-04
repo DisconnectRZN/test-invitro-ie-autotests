@@ -40,7 +40,7 @@ public class AboutCompanyPage extends PageObject {
 
     private By AboutCompanyInBurger = By.xpath("//a[@class='header-menu__link header-menu__link--title'][contains(text(),'Об ИНВИТРО')]");// Кликнуть 'Об ИНВИТРО' в бургер меню
     private By AboutCompanyHeadline = By.xpath("//h1[contains(text(),'О компании')]");// Заголовок 'О компании'
-    private By AboutInvitroMenu = By.xpath("//*[@class='side-bar side-bar--alt']");// Левое меню раздела 'Об Инвитро'
+    private By AboutInvitroMenu = By.xpath("//*[@class='side-bar side-bar--alt']");// Левое меню раздела 'Об Инвитро.'
     private By AboutInvitroBlock = By.xpath("//div[@class='service-home-about']");// Блок Описание компании
     private By AboutCompanyFoto1 = By.xpath("//*[@src='/upload/medialibrary/5d0/5d00a45dd8d12204ebe8e76b58e35cad.jpg']");// Фото блока о компании
     private By AboutCompanyMore = By.xpath("//div[@class='about-features__item']//parent::*[1]");// Блоки более

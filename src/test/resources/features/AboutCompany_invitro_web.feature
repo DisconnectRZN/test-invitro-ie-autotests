@@ -1,5 +1,3 @@
-# new feature
-# Tags: optional
 
 Feature: Проверка раздела Об Инвитро
 
