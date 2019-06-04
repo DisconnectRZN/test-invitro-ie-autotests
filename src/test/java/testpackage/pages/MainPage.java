@@ -5,7 +5,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import testpackage.help.Help_Methods;
 
-@DefaultUrl("https://www.invitro.ru/")
+@DefaultUrl("https://www-test.invitro.ru/")
 
 public class MainPage extends PageObject {
     private static final Help_Methods help = Help_Methods.getInstance();
