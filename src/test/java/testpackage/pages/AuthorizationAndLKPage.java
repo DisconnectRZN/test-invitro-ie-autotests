@@ -9,41 +9,41 @@ import testpackage.help.Help_Methods;
 import static net.thucydides.core.annotations.ClearCookiesPolicy.BeforeEachTest;
 
 
-@DefaultUrl("https://new.invitro.ru/")
+@DefaultUrl("https://client-login.sandbox.gboteam.ru/")
 public class AuthorizationAndLKPage extends PageObject {
     private static final Help_Methods help = Help_Methods.getInstance();
-    @Managed(uniqueSession = true, clearCookies=BeforeEachTest)
+    @Managed(uniqueSession = true, clearCookies = BeforeEachTest)
     // Локаторы окна авторизации
-    private By EnterInSite = By.xpath("//*[@id='header_button_login']");// Кнопка 'Вход в кабинет пациента(открыть окно Авторизации)'
-    private By EnterInLKPage = By.xpath("//div[contains(text(),'Войти')]");// Вкладка 'Войти'
-    private By EnterInLKText = By.xpath("//div[contains(text(),'Вход в личный кабинет')]");//Текст 'Вход в личный кабинет'
-    private By EnterInLKBlock = By.xpath("//div[@class='tab-block']");// Блок формы 'Войти'
-    private By LoginFieldAuthorization = By.xpath("//*[@id='login']");// Поле ввода Логина
-    private By PasswordFieldAuthorization = By.xpath("//*[@id='password']");// Поле ввода Пароля
-    private By ViewPasswordAuthorization = By.xpath("//*[@class='form__pass-visible']");// Отобразить пароль Авторизации'
-    private By ForgotYourPasswordLink = By.xpath("//a[@class='autorisation__link-forgot link']");// Ссылка 'Забыли пароль?'
-    private By LKallowsYouBlock = By.xpath("//*[@class='popup-enter__right']");// Блок 'Личный кабинет дает возможность'
-    private By IconTestTube = By.xpath("//*[contains(@class,'icon icon-enter-1')]");// Иконка пробирка
-    private By IconPrivilege = By.xpath("//*[contains(@class,'icon icon-enter-3')]");// Иконка привелегии
-    private By IconBook = By.xpath("//*[contains(@class,'icon icon-enter-4')]]");// Иконка книга
-    private By EnterInLK = By.xpath("//*[@value='Войти']");// Кнопка 'Войти в ЛК'
-    private By LoginAfterAvtorization = By.xpath("//button[contains(text(),'autotest.invitro@gmail.com')]");// Текст логина под которым прошла авторизация''
-    private By ExitAfterAvtorization = By.xpath("//*[@id='header_logout_button']");// Кнопка 'Выйти' из учетной записи
+    private final By EnterInSite = By.xpath("//*[@id='header_button_login']");// Кнопка 'Вход в кабинет пациента(открыть окно Авторизации)'
+    private final By EnterInLKPage = By.xpath("//div[contains(text(),'Войти')]");// Вкладка 'Войти'
+    private final By EnterInLKText = By.xpath("//div[contains(text(),'Вход в личный кабинет')]");//Текст 'Вход в личный кабинет'
+    private final By EnterInLKBlock = By.xpath("//div[@class='tab-block']");// Блок формы 'Войти'
+    private final By LoginFieldAuthorization = By.xpath("//*[@id='login']");// Поле ввода Логина
+    private final By PasswordFieldAuthorization = By.xpath("//*[@id='password']");// Поле ввода Пароля
+    private final By ViewPasswordAuthorization = By.xpath("//*[@class='form__pass-visible']");// Отобразить пароль Авторизации'
+    private final By ForgotYourPasswordLink = By.xpath("//a[@class='autorisation__link-forgot link']");// Ссылка 'Забыли пароль?'
+    private final By LKallowsYouBlock = By.xpath("//*[@class='popup-enter__right']");// Блок 'Личный кабинет дает возможность'
+    private final By IconTestTube = By.xpath("//*[contains(@class,'icon icon-enter-1')]");// Иконка пробирка
+    private final By IconPrivilege = By.xpath("//*[contains(@class,'icon icon-enter-3')]");// Иконка привелегии
+    private final By IconBook = By.xpath("//*[contains(@class,'icon icon-enter-4')]]");// Иконка книга
+    private final By EnterInLK = By.xpath("//*[@value='Войти']");// Кнопка 'Войти в ЛК'
+    private final By LoginAfterAvtorization = By.xpath("//button[contains(text(),'autotest.invitro@gmail.com')]");// Текст логина под которым прошла авторизация''
+    private final By ExitAfterAvtorization = By.xpath("//*[@id='header_logout_button']");// Кнопка 'Выйти' из учетной записи
 
     // Локаторы окна Забыли пароль?
-    private By LoginFieldInForgotYourPassword = By.xpath("//*[@id='loginForgot']");// Поле ввода Email или телефон
-    private By BackToTheAuthorizationPage = By.xpath("//*[contains(text(),'Авторизация')]");// Вернуться на вкладку 'Авторизация'
-    private By RestorePasswordButton = By.xpath("//*[@name='Forgot']");// Кнопка 'Востановить пароль'
+    private final By LoginFieldInForgotYourPassword = By.xpath("//*[@id='loginForgot']");// Поле ввода Email или телефон
+    private final By BackToTheAuthorizationPage = By.xpath("//*[contains(text(),'Авторизация')]");// Вернуться на вкладку 'Авторизация'
+    private final By RestorePasswordButton = By.xpath("//*[@name='Forgot']");// Кнопка 'Востановить пароль'
 
     // Локаторы окна регистрации
-    private By SignUpInLKPage = By.xpath("//div[contains(text(),'Зарегистрироваться')]");// Вкладка 'Регистрация'
-    private By SignUpInLKBlock = By.xpath("//div[@class='article__tab']");// Блок формы 'Зарегистрироваться'
-    private By LoginFieldCheckIn = By.xpath("//*[@id='loginReg']");// Поле ввода Логина
-    private By PasswordFieldCheckIn  = By.xpath("//*[@id='passwordReg']");// Поле ввода Пароля
-    private By RepeatPasswordFieldCheckIn  = By.xpath("//*[@id='passwordRepeat']");// Поле ввода Повторить пароль
-    private By ConsentUslugi = By.xpath("//*[@class='checkbox__item']");// Поле согласия с Условиями предоставления услуг
-    private By TermsOfService = By.xpath("//*[@class='link link--inv']");// Ссылка 'Условия предоставления услуг'
-    private By SubmitButton = By.xpath("//*[@class='btn-icon btn-icon--fill btn--full js-button-submit']");// Кнопка 'Зарегистрироваться'
+    private final By SignUpInLKPage = By.xpath("//div[contains(text(),'Зарегистрироваться')]");// Вкладка 'Регистрация'
+    private final By SignUpInLKBlock = By.xpath("//div[@class='article__tab']");// Блок формы 'Зарегистрироваться'
+    private final By LoginFieldCheckIn = By.xpath("//*[@id='loginReg']");// Поле ввода Логина
+    private final By PasswordFieldCheckIn = By.xpath("//*[@id='passwordReg']");// Поле ввода Пароля
+    private final By RepeatPasswordFieldCheckIn = By.xpath("//*[@id='passwordRepeat']");// Поле ввода Повторить пароль
+    private final By ConsentUslugi = By.xpath("//*[@class='checkbox__item']");// Поле согласия с Условиями предоставления услуг
+    private final By TermsOfService = By.xpath("//*[@class='link link--inv']");// Ссылка 'Условия предоставления услуг'
+    private final By SubmitButton = By.xpath("//*[@class='btn-icon btn-icon--fill btn--full js-button-submit']");// Кнопка 'Зарегистрироваться'
 
 
     // Методы окна Авторизации
@@ -70,12 +70,12 @@ public class AuthorizationAndLKPage extends PageObject {
 
     public void enterLoginFieldAuthorization() {
 
-        help.Enter_Text(LoginFieldAuthorization,"autotest.invitro@gmail.com");
+        help.Enter_Text(LoginFieldAuthorization, "autotest.invitro@gmail.com");
     }
 
     public void enterPasswordFieldAuthorization() {
 
-        help.Enter_Text(PasswordFieldAuthorization,"12345");
+        help.Enter_Text(PasswordFieldAuthorization, "12345");
     }
 
     public void сlickViewPasswordAuthorization() {
@@ -135,7 +135,7 @@ public class AuthorizationAndLKPage extends PageObject {
 
     public void enterLoginFieldInForgotYourPassword() {
 
-        help.Enter_Text(LoginFieldInForgotYourPassword,"autotest.invitro@gmail.com");
+        help.Enter_Text(LoginFieldInForgotYourPassword, "autotest.invitro@gmail.com");
     }
 
     public void сlickBackToTheAuthorizationPage() {
@@ -164,17 +164,17 @@ public class AuthorizationAndLKPage extends PageObject {
 
     public void enterLoginFieldCheckIn() {
 
-        help.Enter_Text(LoginFieldCheckIn,"autotest.invitro@gmail.com");
+        help.Enter_Text(LoginFieldCheckIn, "autotest.invitro@gmail.com");
     }
 
     public void enterPasswordFieldCheckIn() {
 
-        help.Enter_Text(PasswordFieldCheckIn,"12345");
+        help.Enter_Text(PasswordFieldCheckIn, "12345");
     }
 
     public void enterRepeatPasswordFieldCheckIn() {
 
-        help.Enter_Text(RepeatPasswordFieldCheckIn,"12345");
+        help.Enter_Text(RepeatPasswordFieldCheckIn, "12345");
     }
 
     public void сlickConsentUslugi() {
