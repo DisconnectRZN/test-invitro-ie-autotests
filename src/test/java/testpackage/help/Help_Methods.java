@@ -1,8 +1,13 @@
 package testpackage.help;
 
 import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.steps.StepEventBus;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+
+import java.time.temporal.ChronoUnit;
 
 public class Help_Methods extends PageObject {
 
@@ -45,6 +50,22 @@ public class Help_Methods extends PageObject {
     public void Click_Method(By test) { //Метод клика по элементу
         find(test).waitUntilClickable().click();
         getSlow();
+    }
+
+    /**
+     * Вывод в консоль названия текущего шага
+     */
+    public void consoleOutput() {
+        System.out.println(StepEventBus.getEventBus().getCurrentStep().toString()
+                .replaceAll("^Optional\\[", "").replaceAll("]", ""));
+    }
+
+    /**
+     * Скролл к нужному элементу через By
+     */
+    public void scrollTo(By test) {
+        WebElementFacade element = find(test).withTimeoutOf(30, ChronoUnit.SECONDS).waitUntilVisible();
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", test);
     }
 
     public void Check_Enabled_Element(By test) {
