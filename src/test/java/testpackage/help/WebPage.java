@@ -1,4 +1,4 @@
-package testpackage.pages;
+package testpackage.help;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
