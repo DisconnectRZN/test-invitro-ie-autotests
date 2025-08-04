@@ -7,7 +7,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.JavascriptExecutor;
 import java.time.temporal.ChronoUnit;
 
-
 public class WebPage extends PageObject {
 
 /////////////////////////////////////////////////// Xpath's \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -16,9 +15,17 @@ public class WebPage extends PageObject {
 
 
     /** Метод клика по элементу */
-    public void clickMethod(WebElementFacade by) {
+    public void clickMethod_1(WebElementFacade by) {
         WebElementFacade element =
                 element(by).withTimeoutOf(30, ChronoUnit.SECONDS).waitUntilVisible();
+        element.click();
+    }
+
+    /** Метод клика по элементу */
+    public void clickMethod_2(By by) {
+        WebElementFacade element =
+                element(by).withTimeoutOf(30, ChronoUnit.SECONDS).waitUntilVisible();
+        scrollTo(by);
         element.click();
     }
 
@@ -35,6 +42,12 @@ public class WebPage extends PageObject {
         driver.executeScript("if(window.pageYOffset>=100) scrollBy(0, -150); else scroll(0, 0);");
     }
 
+    /** Скролл к нужному элементу через By */
+    public void scrollTo(By element) {
+        WebElementFacade test = find(element).withTimeoutOf(30, ChronoUnit.SECONDS).waitUntilVisible();
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", test);
+    }
+
     public void getSlow() { //Притормаживает выполнение на 5 секунд
         try {
             Thread.sleep(5000);
@@ -42,5 +55,6 @@ public class WebPage extends PageObject {
             e.printStackTrace();
         }
     }
+
 
 }
